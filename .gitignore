@@ -45,3 +45,13 @@ tty/Makefile
 /qt/qsecurelineedit.moc
 /m4/Makefile.in
 /emacs/Makefile.in
+# ignore regenerated files
+INSTALL
+build-aux/compile
+build-aux/config.guess
+build-aux/config.sub
+build-aux/depcomp
+build-aux/install-sh
+build-aux/mdate-sh
+build-aux/missing
+build-aux/texinfo.tex
