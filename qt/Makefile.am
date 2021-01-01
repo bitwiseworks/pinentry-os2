@@ -34,9 +34,9 @@ libcurses =
 endif
 
 
-AM_CPPFLAGS = $(COMMON_CFLAGS) \
+AM_CPPFLAGS = $(PINENTRY_QT_CFLAGS) \
 	-I$(top_srcdir) -I$(top_srcdir)/secmem \
-	$(ncurses_include) -I$(top_srcdir)/pinentry
+	$(ncurses_include) -I$(top_srcdir)/pinentry $(COMMON_CFLAGS) 
 AM_CXXFLAGS = $(PINENTRY_QT_CFLAGS)
 pinentry_qt_LDADD = \
 	../pinentry/libpinentry.a $(top_builddir)/secmem/libsecmem.a \
