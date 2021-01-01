@@ -336,7 +336,9 @@ read_from_emacs (int s, int timeout, char *buffer, size_t capacity)
     }
   else if (retval == 0)
     {
+#ifndef HAVE_DOSISH_SYSTEM
       timed_out = 1;
+#endif
       return gpg_error (GPG_ERR_TIMEOUT);
     }
 
