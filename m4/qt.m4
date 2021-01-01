@@ -58,9 +58,15 @@ AC_DEFUN([FIND_QT],
     fi
 
     qtlibdir=`"$PKG_CONFIG" --variable libdir Qt5Core`
+case "${host}" in
+  *os2*)
+  ;;
+  *)
     if test -n "$qtlibdir"; then
         PINENTRY_QT_LDFLAGS="$PINENTRY_QT_LDFLAGS -Wl,-rpath \"$qtlibdir\""
     fi
+  ;;
+esac
 
     AC_CHECK_TOOL(MOC, moc)
     AC_MSG_CHECKING([moc version])
