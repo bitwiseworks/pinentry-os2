@@ -184,6 +184,11 @@ lock_pool( void *p, size_t n )
 	show_warning = 1;
     }
 
+#elif defined (HAVE_DOSISH_SYSTEM) || defined (__CYGWIN__)
+    /* It does not make sense to print such a warning, given the fact that
+     * this whole Windows !@#$% and their user base are inherently insecure. */
+  (void)p;
+  (void)n;
 #else
     log_info("Please note that you don't have secure memory on this system\n");
 #endif
